@@ -1,17 +1,72 @@
 
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Register = () => {
 
-    const handleRegister = e =>{
+    const [regError, setRegError] = useState('');
+    const [success, setSuccess] = useState('');
+
+    const { createUser } = useContext(AuthContext);
+
+
+    const handleRegister = e => {
         e.preventDefault();
-        
         const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(name, email, password);
    
+        if (password.length < 6) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Password Error',
+                text: 'Password must be at least 6 characters long',
+            });
+            return;
+        } else if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Password Error',
+                text: 'Use at least one special character',
+            });
+            return;
+        } else if (!/[A-Z]/.test(password)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Password Error',
+                text: 'Use at least one uppercase letter',
+            });
+            return;
+        }
+   
+        setRegError('');
+        setSuccess('');
+   
+        // create user in firebase
+        createUser(email, password)
+            .then(result => {
+                console.log(result.user);
+                e.target.reset();
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Registration Successful',
+                    text: 'You have successfully registered!',
+                });
+            })
+            .catch(error => {
+                console.error(error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Registration Error',
+                    text: error.message,
+                });
+            });
     }
+   
+
     return (
         <div className="hero min-h-screen bg-base-200" style={{ backgroundImage: 'url("https://i.ibb.co/S5rvq3Y/ryan-spencer-c-NEi-PIxp-YI-unsplash.jpg")', opacity: '0.8' }}>
         <div className="hero-content flex-col">

@@ -15,6 +15,7 @@ import Register from './Componenets/Register/Register';
 import AddProduct from './Componenets/AddProduct/AddProduct';
 import MyCart from './Componenets/MyCart/MyCart';
 import AuthProvider from './Providers/AuthProvider';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 
 
@@ -37,11 +38,11 @@ const router = createBrowserRouter([
       },
       {
         path:"/addproduct",
-        element:<AddProduct></AddProduct>
+        element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>
       },
       {
         path:"/mycart",
-        element:<MyCart></MyCart>
+        element:<PrivateRoute><MyCart></MyCart></PrivateRoute>
       },
     ]
   },

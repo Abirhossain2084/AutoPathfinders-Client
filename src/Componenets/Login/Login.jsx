@@ -1,16 +1,66 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from 'react-icons/fc';
+import Swal from "sweetalert2";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 
 const Login = () => {
 
-    const handleLogin = e =>{
+    const { signInUser, signInWithGoogle } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+
+    const handleLogin = e => {
         e.preventDefault();
-        
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log( email, password);
-   
+        console.log(email, password);
+
+        signInUser(email, password)
+            .then(result => {
+                console.log(result.user)
+                e.target.reset();
+                navigate(location?.state ? location.state:'/');
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Login Successful',
+                    text: 'You have successfully logged in!',
+                });
+            })
+            .catch(error => {
+                console.error(error)
+
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Check your email/ password !',
+                    text: error.message,
+                });
+            })
+    }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                console.log(result.user)
+                
+                navigate(location?.state ? location.state:'/');
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Login Successful',
+                    text: 'You have successfully logged in!',
+                });
+            })
+            .catch(error => {
+                console.error(error)
+
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Check your email/ password !',
+                    text: error.message,
+                });
+            })
     }
 
     return (
@@ -52,7 +102,7 @@ const Login = () => {
                     
                     <p>
                         
-                        <button  className="btn btn-warning  text-blue "><FcGoogle></FcGoogle> Log in with Google</button></p>
+                        <button  onClick={handleGoogleSignIn} className="btn btn-warning  text-blue "><FcGoogle></FcGoogle> Log in with Google</button></p>
                     </div>
                    
                 </div>
