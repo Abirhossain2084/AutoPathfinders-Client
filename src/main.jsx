@@ -16,6 +16,8 @@ import AddProduct from './Componenets/AddProduct/AddProduct';
 import MyCart from './Componenets/MyCart/MyCart';
 import AuthProvider from './Providers/AuthProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import UpdateProduct from './Componenets/UpdateProduct/UpdateProduct';
+import AddedProduct from './Componenets/AddedProductlist/AddedProduct';
 
 
 
@@ -29,6 +31,11 @@ const router = createBrowserRouter([
         element:<Home></Home>
       },
       {
+        path:"/addedproduct",
+        element:<AddedProduct></AddedProduct>,
+        loader: () =>fetch('http://localhost:5000/product')
+      },
+      {
         path:"/login",
         element:<Login></Login>
       },
@@ -39,6 +46,10 @@ const router = createBrowserRouter([
       {
         path:"/addproduct",
         element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>
+      },
+      {
+        path:"/updateproduct",
+        element:<PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>
       },
       {
         path:"/mycart",

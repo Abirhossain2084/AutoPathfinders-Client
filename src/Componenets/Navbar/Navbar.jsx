@@ -28,7 +28,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className="navbar bg-gray-200">
+        <div className="navbar bg-purple-950">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -38,7 +38,7 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <Link to='/' ><a className="btn btn-warning bg-white border-0 text-yellow-600 normal-case font-bold text-sm lg:text-3xl">AutoPathfinders</a></Link>
+                <Link to='/' ><a className="btn btn-warning bg-purple-700 border-0 text-white normal-case font-bold text-sm lg:text-3xl">AutoPathfinders</a></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
