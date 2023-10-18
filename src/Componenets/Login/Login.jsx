@@ -3,6 +3,16 @@ import { FcGoogle } from 'react-icons/fc';
 
 
 const Login = () => {
+
+    const handleLogin = e =>{
+        e.preventDefault();
+        
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log( email, password);
+   
+    }
+
     return (
         <div className="hero min-h-screen bg-white-200" style={{ backgroundImage: 'url("https://i.ibb.co/S5rvq3Y/ryan-spencer-c-NEi-PIxp-YI-unsplash.jpg")', opacity: '0.9' }}>
         <div className="hero-content flex-col">
@@ -11,7 +21,9 @@ const Login = () => {
             </div>
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                 <div className="card-body  glass">
-                    <form >
+                    <form 
+                    onSubmit={handleLogin}
+                    >
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
