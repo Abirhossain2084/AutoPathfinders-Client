@@ -5,7 +5,7 @@ const ProductList = ({product}) => {
     const {name, type,price, description,  rating, photo } =product;
     return (
         <div className="card glass">
-  <figure><img src={photo} alt="car!"/></figure>
+  <figure><img className="h-52 w-full" src={photo} alt="car!"/></figure>
   <div className="card-body">
     <h2 className="card-title">{name}</h2>
     <h2 className="card-title">${price}</h2>
