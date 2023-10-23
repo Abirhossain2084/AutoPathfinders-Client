@@ -1,9 +1,14 @@
 import  { useEffect, useState } from "react";
 import HomeExtra1 from "./HomeExtra1";
 import HomeExtra2 from "./HomeExtra2";
+import HomeBrands from "./HomeBrands";
+
+
 
 const Home = () => {
     const [brands, setBrands] = useState([]);
+
+
 
     useEffect(() => {
         // Fetch data when the component mounts
@@ -13,6 +18,8 @@ const Home = () => {
             .catch((error) => console.error(error));
     }, []); // Empty dependency array means this effect runs once on mount
 
+
+    
     return (
         <div>
             {/* banner */}
@@ -28,25 +35,23 @@ const Home = () => {
 
             {/* brand list */}
             <section className="py-12 bg-gray-100 my-20">
-                <div className="container mx-auto">
-                    <h2 className="text-5xl font-extrabold text-center mb-8">Our Brands</h2>
-                    <div className="grid p-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {brands.map((brand, index) => (
-                            <div key={index} className="bg-center bg-cover shadow-lg rounded-lg " style={{ backgroundImage: `url(${brand.image})` }}>
-                                <div className="h-60">
+        <div className="container mx-auto">
+          <h2 className="text-5xl font-extrabold text-center mb-8">Our Brands</h2>
+          <div className="grid p-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {brands.map((brand, index) => 
+            <HomeBrands key={brand.id}
+            
+            brand={brand}
+            >
 
-                                </div>
+            </HomeBrands>
+            )}
+          </div>
+        </div>
+      </section>
 
-                                <div className=" inset-0 bg-black opacity-70  rounded-lg">
-
-                                    <h2 className="text-white font-bold text-xl h-16">{brand.name}</h2>
-                                </div>
-
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+     
+    
 
             {/* extra  */}
 
