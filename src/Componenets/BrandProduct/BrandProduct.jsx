@@ -33,11 +33,11 @@ const BrandProduct = () => {
 
               <div className="flex justify-between p-6">
 
-                <Link to={`/details/${item._id}`}>
+                <Link to={`/details/id/${item._id}`}>
                 <button className="btn btn-secondary">Details</button>
                 </Link>
 
-                <Link to={`/updateproduct/${item._id}`}>
+                <Link to={`/updateproduct/id/${item._id}`}>
                 <button className="btn btn-primary">Update</button>
                 </Link>
                
