@@ -60,7 +60,7 @@ const HomeExtra1 = () => {
             <div className="text-center">
               <button
                 type="submit"
-                className="bg-purple-800 text-white font-medium py-2 px-6 rounded-md hover:bg-blue-600 transition duration-300"
+                className="bg-purple-900 hover:bg-purple-700 text-white font-medium py-2 px-6 rounded-md hover:bg-blue-600 transition duration-300"
               >
                 Send Message
               </button>

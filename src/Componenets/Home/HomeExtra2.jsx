@@ -14,8 +14,8 @@ const HomeExtra2 = () => {
 
     return (
         <div className="container mx-auto py-12">
-        <h2 className="text-3xl font-extrabold text-center mb-8">Car Gallery</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <h2 className="text-6xl mb-20  font-extrabold text-center mb-8">Car Gallery</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-4">
             {cars.map((car, index) => (
                 <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
                     <img
@@ -26,6 +26,7 @@ const HomeExtra2 = () => {
                 </div>
             ))}
         </div>
+        
     </div>
     );
 };

@@ -53,10 +53,17 @@ const UpdateProduct = () => {
     return (
         
 
-<div className="bg-transparent glass my-20 p-6 rounded-lg shadow-md container  mx-auto">
-<h1 className="text-4xl font-bold text-white text-center mb-4">Update Product </h1>
-<h1 className="text-2xl font-bold text-white text-center mb-4">Name :{name} </h1>
-<h1 className="text-2xl font-bold text-white text-center mb-4">Type :{type}</h1>
+        <div
+        className="bg-transparent glass my-20 p-6 h-[600px] rounded-lg shadow-md container mx-auto"
+        style={{
+          backgroundImage: 'url("https://i.ibb.co/8jVKX3s/alexander-grey-62vi3-TG5-EDg-unsplash.jpg")', // Replace with the path to your image
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+<h1 className="text-4xl font-extrabold text-purple-700 text-center mb-4">Update Product </h1>
+<h1 className="text-2xl  text-purple-700 text-center mb-4">Name :{name} </h1>
+<h1 className="text-2xl  text-purple-700 text-center mb-4">Type :{type}</h1>
 <form 
 onSubmit={handleUpdateCoffee}
 className="space-y-4 p-10">
@@ -125,7 +132,7 @@ className="space-y-4 p-10">
 
     {/* Add Button */}
     <div className="text-center">
-        <button type="submit" className="btn bg-purple-400 hover:bg-purple-700 text-white py-2 px-4 rounded-md">Update Product</button>
+        <button type="submit" className="btn bg-purple-800 hover:bg-purple-700 text-white py-2 px-4 rounded-md">Update Product</button>
     </div>
 </form>
 </div>

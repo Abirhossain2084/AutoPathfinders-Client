@@ -73,26 +73,26 @@ const Register = () => {
             <div className="text-center ">
                 <h1 className="text-5xl text-yellow-500 font-bold">Register now!</h1>
             </div>
-            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                <div className="card-body">
+            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl mb-20 ">
+                <div className="card-body glass rounded-lg text-white">
                     <form 
                     onSubmit={handleRegister}
                     >
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Name</span>
+                                <span className="label-text text-white">Name</span>
                             </label>
                             <input type="text" name="name" placeholder="Your Name" required className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className="label-text text-white">Email</span>
                             </label>
                             <input type="email" name="email" placeholder="Email" required className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Password</span>
+                                <span className="label-text text-white">Password</span>
                             </label>
                             <input type="password" name="password" required placeholder="Password" className="input input-bordered" />
 
@@ -102,7 +102,7 @@ const Register = () => {
                         </div>
                     </form>
                     <p> Already have account? <Link to="/login">
-                        <button className="btn btn-link">Login</button>
+                        <button className="btn btn-link text-purple-400">Login</button>
                     </Link>here! </p>
 
                    

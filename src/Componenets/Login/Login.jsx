@@ -69,24 +69,24 @@ const Login = () => {
             <div className="text-center ">
                 <h1 className="text-5xl text-yellow-500 font-bold">Login now!</h1>
             </div>
-            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                <div className="card-body  glass">
+            <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl ">
+                <div className="card-body text-white  glass rounded-lg mb-16">
                     <form 
                     onSubmit={handleLogin}
                     >
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className="label-text text-white">Email</span>
                             </label>
                             <input type="email" name="email" placeholder="email" required className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Password</span>
+                                <span className="label-text  text-white">Password</span>
                             </label>
                             <input type="password" name="password" required placeholder="password" className="input input-bordered" />
                             <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                <a href="#" className="label-text-alt link link-hover  text-white">Forgot password?</a>
                             </label>
                         </div>
                         <div className="form-control mt-6">
@@ -95,7 +95,7 @@ const Login = () => {
                     </form>
                     <p> First time here? please <Link
                      to="/register">
-                        <button className="btn btn-link">Register</button>
+                        <button className="btn btn-link text-purple-400 font-bold">Register</button>
                     </Link> </p>
 
                     <div className="flex ml-6">

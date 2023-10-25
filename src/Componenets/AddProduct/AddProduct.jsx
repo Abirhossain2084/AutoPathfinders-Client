@@ -47,8 +47,15 @@ const AddCoffee = () => {
     };
 
     return (
-        <div className="bg-transparent glass my-20 p-6 rounded-lg shadow-md container  mx-auto">
-            <h1 className="text-4xl font-bold text-white text-center mb-4">Add Product</h1>
+        <div
+  className="bg-transparent glass my-20 p-6 h-[600px] rounded-lg shadow-md container mx-auto"
+  style={{
+    backgroundImage: 'url("https://i.ibb.co/8jVKX3s/alexander-grey-62vi3-TG5-EDg-unsplash.jpg")', // Replace with the path to your image
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  }}
+>
+            <h1 className="text-4xl font-extrabold text-purple-900 text-center mb-4">Add Product</h1>
             <form 
             onSubmit={handleAddCoffee}
             className="space-y-4 p-10">
@@ -57,7 +64,7 @@ const AddCoffee = () => {
                     <div className="w-full md:w-1/2">
                         <div className="form-control">
                             <label htmlFor="name" className="label">
-                                <span className="label-text">Product Name</span>
+                                <span className="label-text text-black">Product Name</span>
                             </label>
                             <input type="text" id="name" name="name" placeholder="Product Name" className="input input-bordered w-full" />
                         </div>
@@ -65,7 +72,7 @@ const AddCoffee = () => {
                     <div className="w-full md:w-1/2">
                         <div className="form-control">
                             <label htmlFor="quantity" className="label">
-                                <span className="label-text">Type</span>
+                                <span className="label-text text-black">Type</span>
                             </label>
                             <input type="text" id="type" name="type" placeholder="Type" className="input input-bordered w-full" />
                         </div>
@@ -77,7 +84,7 @@ const AddCoffee = () => {
                     <div className="w-full md:w-1/2">
                         <div className="form-control">
                             <label htmlFor="suplier" className="label">
-                                <span className="label-text">Price</span>
+                                <span className="label-text text-black">Price</span>
                             </label>
                             <input type="text" name="price" placeholder="Price" className="input input-bordered w-full" />
                         </div>
@@ -85,7 +92,7 @@ const AddCoffee = () => {
                     <div className="w-full md:w-1/2">
                         <div className="form-control">
                             <label htmlFor="taste" className="label">
-                                <span className="label-text">Short Description</span>
+                                <span className="label-text text-black">Short Description</span>
                             </label>
                             <input type="text" id="taste" name="description" placeholder="Description" className="input input-bordered w-full" />
                         </div>
@@ -97,7 +104,7 @@ const AddCoffee = () => {
                     <div className="w-full md:w-1/2">
                         <div className="form-control">
                             <label htmlFor="category" className="label">
-                                <span className="label-text">Rating</span>
+                                <span className="label-text text-black">Rating</span>
                             </label>
                             <input type="text" name="rating" placeholder="Rating" className="input input-bordered w-full" />
                         </div>
@@ -105,7 +112,7 @@ const AddCoffee = () => {
                     <div className="w-full md:w-1/2">
                         <div className="form-control">
                             <label htmlFor="photo" className="label">
-                                <span className="label-text">Photo</span>
+                                <span className="label-text text-black">Photo</span>
                             </label>
                             <input type="text" id="photo" name="photo" placeholder="Photo URL" className="input input-bordered w-full" />
                         </div>
@@ -117,7 +124,7 @@ const AddCoffee = () => {
 
                 {/* Add Button */}
                 <div className="text-center">
-                    <button type="submit" className="btn bg-purple-400 hover:bg-purple-700 text-white py-2 px-4 rounded-md">Add Product</button>
+                    <button type="submit" className="btn bg-purple-800 hover:bg-purple-700 text-white py-2 px-4 rounded-md">Add Product</button>
                 </div>
             </form>
         </div>
