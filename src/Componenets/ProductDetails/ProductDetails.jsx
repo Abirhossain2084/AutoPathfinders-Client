@@ -48,20 +48,31 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className="grid justify-center my-20 relative">
-  <img className="h-96 rounded-2xl" src={product.photo} alt={product.name} />
-  <h2 className="">{product.name}</h2>
-  <p>Type: {product.type}</p>
-  <p>Price: ${product.price}</p>
-  <p>Description: {product.description2}</p>
-  <p>Rating: {product.rating}</p>
-  <button
-    className="btn bg-purple-600 hover-bg-purple-900 absolute bottom-4 left-1/2 transform -translate-x-1/2"
-    onClick={handleAddToCart}
-  >
-    Add to Cart
-  </button>
-</div>
+    <div className="grid glass rounded-lg bg-black text-white justify-center my-20 relative">
+    <div className="flex flex-col items-center"> {/* Centering container */}
+      <img className="h-96 mt-4 rounded-2xl" src={product.photo} alt={product.name} />
+      <div className="p-6 text-center">
+        <p className="text-2xl font-bold my-2">Name: {product.name}</p>
+        <p className="text-xl font-semibold">Type: {product.type}</p>
+        <p className="text-xl font-semibold my-4">Price: ${product.price}</p>
+        <p className="text-yellow-400">
+          <span className="text-xl font-bold">Description:</span> {product.description}
+        </p>
+        <p className="text-yellow-400">
+          <span className="text-xl font-bold">Details:</span> {product.description2}
+        </p>
+        <p className="text-xl font-semibold my-2">Rating: {product.rating} / 10</p>
+        <button
+          className="btn bg-purple-600 hover-bg-purple-900"
+          onClick={handleAddToCart}
+        >
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+  
+
 
   );
 };

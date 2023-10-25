@@ -31,7 +31,7 @@ const BrandProduct = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {product.map((item, index) => (
-            <div key={index} className="glass text-white shadow-lg rounded-lg overflow-hidden my-20">
+            <div key={index} className="glass bg-black text-white shadow-lg rounded-lg overflow-hidden my-20">
               {/* Product Image */}
               <img
                 src={item.photo}
