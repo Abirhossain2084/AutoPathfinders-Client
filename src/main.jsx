@@ -20,6 +20,7 @@ import UpdateProduct from './Componenets/UpdateProduct/UpdateProduct';
 import AddedProduct from './Componenets/AddedProductlist/AddedProduct';
 import BrandProduct from './Componenets/BrandProduct/BrandProduct';
 import ProductDetails from './Componenets/ProductDetails/ProductDetails';
+import Error from './Componenets/Error/Error';
 
 
 
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<Error></Error>,
     children: [
       {
         path:"/",
@@ -35,18 +37,18 @@ const router = createBrowserRouter([
       {
         path:"/addedproduct",
         element:<AddedProduct></AddedProduct>,
-        loader: () =>fetch('http://localhost:5000/product')
+        loader: () =>fetch('https://autopathfinder-server-arqtj2hvl-md-abir-hossains-projects.vercel.app/product')
       },
       {
         path:"/product/:name",
         element:<BrandProduct></BrandProduct>,
-        loader: ({params}) => fetch(`http://localhost:5000/product/${params.name}`)
+        loader: ({params}) => fetch(`https://autopathfinder-server-arqtj2hvl-md-abir-hossains-projects.vercel.app/product/${params.name}`)
         
       },
       {
         path:"/details/id/:id",
         element:<PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/product/id/${params.id}`)
+        loader: ({params}) => fetch(`https://autopathfinder-server-arqtj2hvl-md-abir-hossains-projects.vercel.app/product/id/${params.id}`)
         
       },
 
@@ -65,14 +67,14 @@ const router = createBrowserRouter([
       {
         path:"/updateproduct/id/:id",
         element:<PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/product/id/${params.id}`)
+        loader: ({params}) => fetch(`https://autopathfinder-server-arqtj2hvl-md-abir-hossains-projects.vercel.app/product/id/${params.id}`)
         
       
       },
       {
         path:"/mycart",
         element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
-        loader: () => fetch(`http://localhost:5000/cartproduct/add-to-cart`)
+        loader: () => fetch(`https://autopathfinder-server-arqtj2hvl-md-abir-hossains-projects.vercel.app/cartproduct/add-to-cart`)
       },
     ]
   },

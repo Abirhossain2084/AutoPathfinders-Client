@@ -28,7 +28,7 @@ const UpdateProduct = () => {
         //send data to server
 
 
-        fetch(`http://localhost:5000/product/id/${_id}`,{
+        fetch(`https://autopathfinder-server-arqtj2hvl-md-abir-hossains-projects.vercel.app/product/id/${_id}`,{
             method:'PUT',
             headers:{
                 'content-type': 'application/json'

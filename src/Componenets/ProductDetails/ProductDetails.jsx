@@ -17,7 +17,7 @@ const ProductDetails = () => {
       };
 
       // Send a POST request to your server to add the product to the cart
-      const response = await fetch('http://localhost:5000/cartproduct/add-to-cart', {
+      const response = await fetch('https://autopathfinder-server-arqtj2hvl-md-abir-hossains-projects.vercel.app/cartproduct/add-to-cart', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

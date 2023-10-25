@@ -23,7 +23,7 @@ const AddCoffee = () => {
         //send data to server
 
 
-        fetch('http://localhost:5000/product',{
+        fetch('https://autopathfinder-server-arqtj2hvl-md-abir-hossains-projects.vercel.app/product',{
             method:'POST',
             headers:{
                 'content-type': 'application/json'

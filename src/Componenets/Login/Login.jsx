@@ -78,13 +78,13 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text text-white">Email</span>
                             </label>
-                            <input type="email" name="email" placeholder="email" required className="input input-bordered" />
+                            <input type="email" name="email" placeholder="email" required className="input input-bordered text-black font-bold" />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text  text-white">Password</span>
                             </label>
-                            <input type="password" name="password" required placeholder="password" className="input input-bordered" />
+                            <input type="password" name="password" required placeholder="password" className="input input-bordered text-black font-bold" />
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover  text-white">Forgot password?</a>
                             </label>
